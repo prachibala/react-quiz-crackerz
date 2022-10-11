@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Course from "../Course/Course";
 import "./Home.css";
 
 const Home = () => {
+    const [courses, setCourses] = useState([]);
+    useEffect(() => {
+        fetch("https://openapi.programming-hero.com/api/quiz")
+            .then((res) => res.json())
+            .then((data) => setCourses(data.data))
+            .catch((err) => {
+                console.log(err);
+            });
+    }, []);
     return (
         <>
             <div className="home-header overlay">
@@ -19,8 +29,18 @@ const Home = () => {
                 </div>
             </div>
 
-            <h2> Our Courses</h2>
-            <p>There are various kinds of courses available</p>
+            <div className="m-5" style={{ color: "#405073" }}>
+                <h2 className="text-center"> Our Courses</h2>
+                <p className="text-center">
+                    There are various kinds of courses available
+                </p>
+            </div>
+
+            <div className="courseContainer container">
+                {courses.map((course) => (
+                    <Course key={course.id} course={course}></Course>
+                ))}
+            </div>
         </>
     );
 };

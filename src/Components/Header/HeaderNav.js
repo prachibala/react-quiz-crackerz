@@ -21,7 +21,7 @@ const HeaderNav = () => {
                     </div>
                 </div>
                 <div className="nav-right">
-                    <Link to="home">Home</Link>
+                    <Link to="/">Home</Link>
                     <Link to="topic">Topics</Link>
                     <Link to="about">About</Link>
                     <Link to="blog">Blog</Link>
