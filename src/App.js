@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import About from "./Components/About/About";
 import Blog from "./Components/Blog/Blog";
+import Practices from "./Components/Course/Practice/Practices";
 import Home from "./Components/Home/Home";
 import Main from "./Components/Main/Main";
 import Topics from "./Components/Topic/Topics";
@@ -13,7 +14,17 @@ function App() {
             children: [
                 {
                     path: "/",
+
                     element: <Home></Home>,
+                },
+                {
+                    path: "/:courseId",
+                    loader: async ({ params }) => {
+                        return fetch(
+                            ` https://openapi.programming-hero.com/api/quiz/${params.courseId}`
+                        );
+                    },
+                    element: <Practices></Practices>,
                 },
                 {
                     path: "topic",

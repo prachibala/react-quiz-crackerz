@@ -4,6 +4,8 @@ import Card from "react-bootstrap/Card";
 import "./Course.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+
 const Course = ({ course }) => {
     return (
         <div className="singleCard mb-5">
@@ -11,10 +13,15 @@ const Course = ({ course }) => {
                 <Card.Img variant="top" src={course.logo} />
                 <Card.Body>
                     <Card.Title>{course.name}</Card.Title>
-                    <Button className="button" size="sm">
-                        Practice{" "}
-                        <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
-                    </Button>
+
+                    <Link to={`/${course.id}`}>
+                        <Button className="button" size="sm">
+                            Practice{" "}
+                            <FontAwesomeIcon
+                                icon={faArrowRight}
+                            ></FontAwesomeIcon>
+                        </Button>
+                    </Link>
                 </Card.Body>
             </Card>
         </div>
