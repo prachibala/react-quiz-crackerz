@@ -1,0 +1,24 @@
+.footer {
+    background-color: #405073;
+    width: 100%;
+    font-size: 15px;
+    padding: 45px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer a {
+    color: #fff;
+    margin-right: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.footer img {
+    height: 50px;
+}
+
+.footer .copyright {
+    color: #fabe2c;
+}
