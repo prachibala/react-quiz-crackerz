@@ -1,9 +1,10 @@
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import About from "./Components/About/About";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import Blog from "./Components/Blog/Blog";
 import Practices from "./Components/Course/Practice/Practices";
 import Home from "./Components/Home/Home";
 import Main from "./Components/Main/Main";
+import Statistics from "./Components/Statistics/Statistics";
 import Topics from "./Components/Topic/Topics";
 //
 function App() {
@@ -14,14 +15,13 @@ function App() {
             children: [
                 {
                     path: "/",
-
                     element: <Home></Home>,
                 },
                 {
                     path: "/:courseId",
                     loader: async ({ params }) => {
                         return fetch(
-                            ` https://openapi.programming-hero.com/api/quiz/${params.courseId}`
+                            `https://openapi.programming-hero.com/api/quiz/${params.courseId}`
                         );
                     },
                     element: <Practices></Practices>,
@@ -31,12 +31,12 @@ function App() {
                     element: <Topics></Topics>,
                 },
                 {
-                    path: "about",
-                    element: <About></About>,
-                },
-                {
                     path: "blog",
                     element: <Blog></Blog>,
+                },
+                {
+                    path: "stats",
+                    element: <Statistics></Statistics>,
                 },
             ],
         },
