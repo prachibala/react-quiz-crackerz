@@ -1,12 +1,17 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import Question from "../../Question/Question";
 
 const Practices = () => {
-    const course = useLoaderData();
-    const { id } = course.data;
+    const questions = useLoaderData();
+    console.log(questions.data.questions);
+    const questionsData = questions.data.questions;
     return (
         <div>
-            <h1>Practice= {id}</h1>
+            <h1>Practice=</h1>
+            {questionsData.map((question) => (
+                <Question key={question.id} question={question}></Question>
+            ))}
         </div>
     );
 };
