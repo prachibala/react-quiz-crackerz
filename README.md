@@ -1,6 +1,6 @@
 <!-- LIve site LInk -->
 
-https://effulgent-buttercream-e87c8f.netlify.app/blog
+https://quize-zone.netlify.app/
 
 <!-- Private repo link -->
 

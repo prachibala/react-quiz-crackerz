@@ -14,9 +14,13 @@ const Practices = () => {
                 <h2 className="practice-header">
                     Test your <span>{questions.data.name}</span> skill
                 </h2>
-                {questionsData.map((question) => (
-                    <Question key={question.id} question={question}></Question>
-                ))}
+                {questionsData &&
+                    questionsData.map((question) => (
+                        <Question
+                            key={question.id}
+                            question={question}
+                        ></Question>
+                    ))}
             </Container>
         </div>
     );

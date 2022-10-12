@@ -23,8 +23,6 @@ const Statistics = () => {
             });
     }, []);
 
-    console.log(data);
-
     return (
         <Container>
             <section

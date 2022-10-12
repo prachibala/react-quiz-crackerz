@@ -16,7 +16,7 @@ const Course = ({ course }) => {
                     <Card.Body>
                         <Card.Title>{course.name}</Card.Title>
 
-                        <Link to={`/${course.id}`}>
+                        <Link to={`/quiz/${course.id}`}>
                             <Button className="button" size="sm">
                                 Practice{" "}
                                 <FontAwesomeIcon
