@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Blog from "./Components/Blog/Blog";
 import Practices from "./Components/Course/Practice/Practices";
+import NotFound from "./Components/ErrorPage/NotFound";
+
 import Home from "./Components/Home/Home";
 import Main from "./Components/Main/Main";
 import Statistics from "./Components/Statistics/Statistics";
@@ -39,6 +41,10 @@ function App() {
                     element: <Statistics></Statistics>,
                 },
             ],
+        },
+        {
+            path: "*",
+            element: <NotFound></NotFound>,
         },
     ]);
     return (

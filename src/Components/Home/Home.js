@@ -40,7 +40,7 @@ const Home = () => {
                 </p>
             </div>
 
-            <div className="courseContainer container">
+            <div className="courseContainer container mb-5">
                 <Row>
                     {courses.map((course) => (
                         <Course key={course.id} course={course}></Course>
