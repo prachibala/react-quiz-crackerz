@@ -31,3 +31,23 @@
     display: flex;
     justify-content: space-around;
 }
+
+@media only screen and (max-width: 970px) {
+    .home-header-text {
+        font-size: 50px !important;
+    }
+
+    .home-sub-text {
+        font-size: 15px !important;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .home-header-text {
+        font-size: 30px !important;
+    }
+
+    .home-sub-text {
+        font-size: 14px !important;
+    }
+}

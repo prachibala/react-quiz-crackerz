@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Course from "../Course/Course";
+import { Row } from "react-bootstrap";
 import "./Home.css";
 
 const Home = () => {
@@ -16,12 +17,15 @@ const Home = () => {
         <>
             <div className="home-header overlay">
                 <div className="text">
-                    <h1 style={{ color: "#405073" }}>
-                        Quiz &{" "}
-                        <span style={{ color: "#FABE2C" }}>Learning</span>{" "}
+                    <h1
+                        className="home-header-text"
+                        style={{ color: "#405073" }}
+                    >
+                        Quiz &
+                        <span style={{ color: "#FABE2C" }}> Learning </span>
                         Organization.
                     </h1>
-                    <p style={{ color: "#2e3951" }}>
+                    <p className="home-sub-text" style={{ color: "#2e3951" }}>
                         we proviet best education system for you. We are
                         committed to providing excellent learning service and an
                         overall good experience. Thank you for choosing us.
@@ -37,9 +41,11 @@ const Home = () => {
             </div>
 
             <div className="courseContainer container">
-                {courses.map((course) => (
-                    <Course key={course.id} course={course}></Course>
-                ))}
+                <Row>
+                    {courses.map((course) => (
+                        <Course key={course.id} course={course}></Course>
+                    ))}
+                </Row>
             </div>
         </>
     );
